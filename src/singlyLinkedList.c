@@ -80,12 +80,31 @@ void insertNodeAtEnd(){
 
 }
 
+void sortList()
+{
+	struct node *tnode , *pnode ;
+	for(tnode = start; tnode!=NULL; tnode = tnode->next)
+	{
+		for(pnode = start; pnode->next!=NULL;pnode= pnode->next)
+		{
+			if(pnode->next->data < pnode ->data)
+			{
+				int temp;
+				temp = pnode->data;
+				pnode->data = pnode->next->data;
+				pnode->next->data = temp;	
+			}
+		}
+		traverseNode();
+	}
+}
+
 int main(){
 int choice;
 int position;
 
 while(1){
-printf("\nEnter 1 to insert node at Start\n2 to insert node at the End\n3 to enter at a particular location\n4 to free the heap");
+printf("\nEnter 1 to insert node at Start\n2 to insert node at the End\n3 to enter at a particular location\n4 to sort the list\n5 to free the heap");
 scanf("%d",&choice);
 	switch(choice){
 		case 1:
@@ -107,6 +126,10 @@ scanf("%d",&choice);
 		break;
 
 		case 4:
+		sortList();
+		break;
+
+		case 5:
 		freeNodes();
 		traverseNode();
 		break;
