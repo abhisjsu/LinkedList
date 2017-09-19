@@ -8,3 +8,6 @@ This repository consists of modularised code implemented to perform the basic op
   5. Traversing the linked list
   6. Freeing all the memory explicitly allocated by the user on the heap storage
   7. Compiling the code through makefile
+
+- [project kickoff]
+- [task 1]
